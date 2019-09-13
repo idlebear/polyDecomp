@@ -1,0 +1,23 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+PROJECT(conv)
+
+SET(CMAKE_BUILD_TYPE distribution)
+SET(CMAKE_CXX_FLAGS_DISTRIBUTION "-O3")
+SET(CMAKE_C_FLAGS_DISTRIBUTION "-O3")
+
+FIND_PACKAGE(OpenGL REQUIRED)
+
+INCLUDE_DIRECTORIES (
+	/usr/local/include/freetype2/
+	.
+)
+
+LINK_DIRECTORIES (
+	/usr/local/lib/ 
+)
+
+ADD_EXECUTABLE (
+    conv main.cpp
+    common.cpp Point.cpp
+)
+TARGET_LINK_LIBRARIES(conv Xrandr pthread ftgl glfw ${OPENGL_LIBRARIES})
