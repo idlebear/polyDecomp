@@ -1,10 +1,11 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10 )
-PROJECT(polyDecomp)
+PROJECT(poly_decomp)
 
 set(CMAKE_CXX_STANDARD 11)
 set(TARGET_NAME ${PROJECT_NAME})
 
 # option(${PROJECT_NAME}_xxxx "Use conan" OFF)
+find_package( catkin REQUIRED )
 
 include_directories(
         include
@@ -23,7 +24,7 @@ set( SOURCES
 )
 
 # expose the source list to any calling parent (hacky)
-set( polyDecomp_SOURCES ${SOURCES} PARENT_SCOPE )
+set( poly_decomp_SOURCES ${SOURCES} PARENT_SCOPE )
 
 # Build the main library
 add_library(${TARGET_NAME}
@@ -47,8 +48,8 @@ target_include_directories(${TARGET_NAME}
 catkin_package(
   INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include
   LIBRARIES ${TARGET_NAME}
-  CATKIN_DEPENDS 
-  DEPENDS 
+  # CATKIN_DEPENDS
+  # DEPENDS
 )
 
 ## Mark executables and/or libraries for installation
