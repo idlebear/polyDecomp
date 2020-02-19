@@ -100,7 +100,7 @@ namespace Polygon_Decomposition {
 
                 // if there are no vertices to connect to, choose a point in the middle
                 if (lowerIndex == (upperIndex + 1) % poly.size()) {
-                    printf("Case 1: Vertex(%d), lowerIndex(%d), upperIndex(%d), poly.size(%d)\n", i, lowerIndex, upperIndex, (int) poly.size());
+                    // printf("Case 1: Vertex(%d), lowerIndex(%d), upperIndex(%d), poly.size(%d)\n", i, lowerIndex, upperIndex, (int) poly.size());
                     p.x = (lowerInt.x + upperInt.x) / 2;
                     p.y = (lowerInt.y + upperInt.y) / 2;
                     // steinerPoints.push_back(p);
@@ -124,7 +124,7 @@ namespace Polygon_Decomposition {
                     }
                 } else {
                     // connect to the closest point within the triangle
-                    printf("Case 2: Vertex(%d), closestIndex(%d), poly.size(%d)\n", i, closestIndex, (int) poly.size());
+                    // printf("Case 2: Vertex(%d), closestIndex(%d), poly.size(%d)\n", i, closestIndex, (int) poly.size());
 
                     if (lowerIndex > upperIndex) {
                         upperIndex += poly.size();
