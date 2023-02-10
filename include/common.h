@@ -23,6 +23,11 @@ namespace Polygon_Decomposition {
     T &at(std::vector<T>& v, int i) {
         return v[wrap(i, v.size())];
     };
+    
+    template<class T>
+    const T &at(const std::vector<T>& v, int i) {
+        return v[wrap(i, v.size())];
+    };
 
 }
 #endif
