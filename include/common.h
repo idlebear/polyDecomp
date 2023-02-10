@@ -20,7 +20,7 @@ namespace Polygon_Decomposition {
     // Scalar srand(const Scalar &min, const Scalar &max);
 
     template<class T>
-    const T &at(const std::vector<T>& v, int i) {
+    T &at(std::vector<T>& v, int i) {
         return v[wrap(i, v.size())];
     };
 
